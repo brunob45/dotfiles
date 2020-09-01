@@ -1,0 +1,29 @@
+{
+    "editor.renderWhitespace": "all",
+    "explorer.confirmDelete": false,
+    "extensions.ignoreRecommendations": false,
+    "explorer.confirmDragAndDrop": false,
+    "update.mode": "none",
+    "git.autofetch": true,
+    "terminal.integrated.rendererType": "dom",
+    "editor.rulers": [
+        80,
+        120
+    ],
+    "platformio-ide.activateOnlyOnPlatformIOProject": true,
+    "platformio-ide.disablePIOHomeStartup": true,
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.intelliSenseCacheSize": 1024,
+    "C_Cpp.vcpkg.enabled": false,
+    "git.confirmSync": false,
+    "git.suggestSmartCommit": false,
+    "files.autoGuessEncoding": true,
+    "diffEditor.maxComputationTime": 0,
+    "editor.fontLigatures": true,
+    "platformio-ide.useBuiltinPIOCore": false,
+    "C_Cpp.updateChannel": "Insiders",
+    "workbench.startupEditor": "newUntitledFile",
+    "editor.fontFamily": "'Fira Code', 'Material Icons', 'Material Design Icons'"
+}
