@@ -12,4 +12,4 @@
 
 # Dotfiles Manager
 
-[Dotbot]: https://github.com/anishathalye/dotbot
+[Dotbot](https://github.com/anishathalye/dotbot)
