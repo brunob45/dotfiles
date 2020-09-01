@@ -1,5 +1,6 @@
 # My Dotfiles
 
+```
     os ~ arch
     sh ~ zsh
     wm ~ i3
@@ -7,6 +8,7 @@
   pkgs ~ 400
   term ~ xterm
   ▅▅▅▅▅▅▅▅▅▅▅▅
+```
 
 # Dotfiles Manager
 
