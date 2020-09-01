@@ -10,6 +10,6 @@
   ▅▅▅▅▅▅▅▅▅▅▅▅
 ```
 
-# Dotfiles Manager
+## Dotfiles Manager
 
 [Dotbot](https://github.com/anishathalye/dotbot)
