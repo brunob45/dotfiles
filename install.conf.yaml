@@ -1,0 +1,23 @@
+- defaults:
+    link:
+      create: true
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.zshrc:
+    ~/.Xresources:
+    ~/.fonts:
+    ~/.wallpaper:
+    ~/.scripts:
+    ~/.config/i3: i3
+    ~/.config/polybar: polybar
+    ~/.config/rofi: rofi
+
+- create:
+  - ~/projects
+  - ~/downloads
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]

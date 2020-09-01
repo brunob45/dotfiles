@@ -1,0 +1,3 @@
+curl -s -L -o $(chezmoi source-path)/oh-my-zsh-master.tar.gz https://github.com/robbyrussell/oh-my-zsh/archive/master.tar.gz
+chezmoi import --strip-components 1 --destination ${HOME}/.oh-my-zsh $(chezmoi source-path)/oh-my-zsh-master.tar.gz
+chezmoi apply

@@ -1,0 +1,16 @@
+configuration {
+    modi:"run";
+    font:"Fira Code 20";
+    location:2;
+    columns:6;
+    bw:0;
+    layout:"horizontal";
+    lines:1;
+    hide-scrollbar:true;
+    kb-row-select:"Tab";
+    kb-row-tab:"";
+    line-margin:0;
+    line-padding:1;
+    color-window:"#e0002b36, #073642, #073642";
+    color-normal:"#00000000, #586e75, #00000000, #00000000, #839496";
+}

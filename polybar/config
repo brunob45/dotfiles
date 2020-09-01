@@ -1,0 +1,339 @@
+;==========================================================
+;
+;
+;   ██████╗  ██████╗ ██╗  ██╗   ██╗██████╗  █████╗ ██████╗
+;   ██╔══██╗██╔═══██╗██║  ╚██╗ ██╔╝██╔══██╗██╔══██╗██╔══██╗
+;   ██████╔╝██║   ██║██║   ╚████╔╝ ██████╔╝███████║██████╔╝
+;   ██╔═══╝ ██║   ██║██║    ╚██╔╝  ██╔══██╗██╔══██║██╔══██╗
+;   ██║     ╚██████╔╝███████╗██║   ██████╔╝██║  ██║██║  ██║
+;   ╚═╝      ╚═════╝ ╚══════╝╚═╝   ╚═════╝ ╚═╝  ╚═╝╚═╝  ╚═╝
+;
+;
+;   To learn more about how to configure Polybar
+;   go to https://github.com/polybar/polybar
+;
+;   The README contains a lot of information
+;
+;==========================================================
+
+[colors]
+base03 =    #e0002b36
+base02 =    #073642
+base01 =    #586e75
+base00 =    #657b83
+base0  =    #839496
+base1  =    #93a1a1
+base2  =    #eee8d5
+base3  =    #fdf6e3
+
+green  =    #55aa55
+yellow =    #ffb52a
+red    =    #ff5555
+purple =    #9f78e1
+blue   =    #0a6cf5
+white  =    ${self.base0}
+black  =    #000000
+
+background = ${self.base03}
+background-alt = ${self.base03}
+foreground = ${self.base0}
+foreground-alt = ${self.base01}
+primary = ${self.base0}
+secondary = #e60053
+alert = #bd2c40
+
+[bar/mybar]
+monitor = ${env:MONITOR:}
+monitor-fallback =
+monitor-strict = false
+override-redirect = true
+bottom = false
+fixed-center = true
+radius = 8.0
+
+width = 99%
+height = 2%
+
+offset-x = .5%
+offset-y = .5%
+
+; dpi-x=200
+; dpi-y=200
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 3
+line-color = ${colors.white}
+
+border-size = 0
+border-color = ${colors.base01}
+
+padding-left = 1
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = .1
+
+font-0 = fixed:pixelsize=10;1
+font-1 = "Material Icons:style=Regular:size=10;3"
+font-2 = "Material Design Icons:style=Regular:size=10;3"
+
+modules-left = i3
+modules-center = date
+; modules-right = xbacklight alsa pulseaudio wlan battery date powermenu
+modules-right = alsa xbacklight forecast wlan battery powermenu
+
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+wm-restack = i3
+
+;override-redirect = true
+
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
+
+;scroll-up = i3wm-wsnext
+;scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+locale = fr_CA.UTF-8
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+; Only show workspaces on the same output as the bar
+pin-workspaces = true
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.black}
+label-mode-background = ${colors.primary}
+
+; focused = Active workspace on focused monitor
+label-focused = %index%
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 2
+
+; unfocused = Inactive workspace on any monitor
+label-unfocused = %index%
+label-unfocused-padding = 2
+
+; visible = Active workspace on unfocused monitor
+label-visible = %index%
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
+
+; urgent = Workspace with urgency hint set
+label-urgent = %index%
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 2
+
+; Separator in between workspaces
+; label-separator = |
+
+
+[module/xbacklight]
+type = internal/xbacklight
+
+format = <label> <bar>
+label = 󰃞
+
+bar-width = 10
+bar-indicator = |
+bar-indicator-foreground = ${colors.foreground}
+bar-indicator-font = 2
+bar-fill = ─
+bar-fill-font = 2
+bar-fill-foreground = ${colors.purple}
+bar-empty = ─
+bar-empty-font = 2
+bar-empty-foreground = ${colors.foreground-alt}
+
+[module/backlight-acpi]
+inherit = module/xbacklight
+type = internal/backlight
+card = intel_backlight
+
+[module/wlan]
+type = internal/network
+interface = wlp0s20f0u12
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+;format-connected = <ramp-signal>
+format-connected-underline = ${colors.purple}
+;label-connected = %essid%
+label-connected = %signal%%
+
+format-disconnected = 󰞃
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+ramp-signal-0 = 󰢿
+ramp-signal-1 = 󰢼
+ramp-signal-2 = 󰢽
+ramp-signal-3 = 󰢾
+ramp-signal-foreground = ${colors.foreground}
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%e %B"
+time = %H:%M
+
+; format-prefix = "󰅐 "
+format-prefix-foreground = ${colors.foreground}
+; format-underline = ${colors.blue}
+
+label = %date% | %time%
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <ramp-volume> <bar-volume>
+;label-volume = 󱄠 %percentage%%
+label-volume = 󱄠
+label-volume-foreground = ${root.foreground}
+
+format-muted = <label-muted> <bar-volume>
+label-muted = 󰖁
+label-muted-foreground = ${colors.base01}
+
+bar-volume-width = 10
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.red}
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+ramp-volume-0 = 󰕿
+ramp-volume-1 = 󰖀
+ramp-volume-2 = 󰕾
+
+[module/battery]
+type = internal/battery
+battery = BAT1
+adapter = ADP1
+full-at = 98
+
+; format-charging-prefix = 󱐋
+format-charging = <animation-charging><label-charging>
+format-charging-underline = ${colors.yellow}
+
+format-discharging = <ramp-capacity><label-discharging>
+format-discharging-underline = ${self.format-charging-underline}
+
+format-full-prefix = 󱈑
+format-full-prefix-foreground = ${colors.foreground}
+format-full-underline = ${self.format-charging-underline}
+
+ramp-capacity-0 = 󰂎
+ramp-capacity-0-foreground = ${colors.red}
+ramp-capacity-1 = 󰂎
+ramp-capacity-1-foreground = ${colors.yellow}
+ramp-capacity-2 = 󱊡
+ramp-capacity-3 = 󱊡
+ramp-capacity-4 = 󱊡
+ramp-capacity-5 = 󱊢
+ramp-capacity-6 = 󱊢
+ramp-capacity-7 = 󱊢
+ramp-capacity-8 = 󱊣
+ramp-capacity-9 = 󱊣
+
+ramp-capacity-foreground = ${colors.foreground}
+
+animation-charging-0 = 󱊤
+animation-charging-1 = 󱊥
+animation-charging-2 = 󱊦
+; animation-charging-3 = 󰢟
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+
+animation-discharging-0 = 󱊣
+animation-discharging-1 = 󱊢
+animation-discharging-2 = 󱊡
+; animation-discharging-3 = 󰂎
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+expand-right = false
+
+format-spacing = 1
+
+label-open = 󰐦
+label-open-foreground = ${colors.base0}
+label-close = 󰅚
+label-close-foreground = ${colors.base01}
+label-separator = |
+label-separator-foreground = ${colors.base01}
+
+menu-0-0 = 󰑐
+menu-0-0-exec = menu-open-1
+menu-0-1 = 󰐥
+menu-0-1-exec = menu-open-2
+menu-0-2 = 󰤄
+menu-0-2-exec = systemctl suspend
+menu-0-3 = 󰍁
+menu-0-3-exec = pkill -n polybar ; i3-msg exit
+
+menu-1-0 = "Reboot "
+menu-1-0-exec = systemctl reboot
+
+menu-2-0 = "Power off "
+menu-2-0-exec = systemctl poweroff
+
+[module/pkgupdates]
+type = custom/script
+exec = checkupdates
+interval = 600
+
+[module/forecast]
+type = custom/script
+exec = curl fr.wttr.in/?format="%c+%t\n" 2>/dev/null | sed "s/\+//"
+label = %output%
+format = <label>
+interval = 600
+format-underline = ${colors.blue}
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+pseudo-transparency = true
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
