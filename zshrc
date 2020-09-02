@@ -98,4 +98,4 @@ export EDITOR=/usr/bin/nano
 #
 # Example aliases
 # info='n user os sh wm up gtk cpu mem host kern pkgs term col n' fet.sh
-info='n os sh wm up kern pkgs term col n' $HOME/.scripts/fet.sh
+info='n os sh wm kern pkgs term col n' $HOME/.scripts/fet.sh
