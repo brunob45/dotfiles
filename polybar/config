@@ -57,8 +57,8 @@ height = 3%
 offset-x = .5%
 offset-y = .5%
 
-; dpi-x=200
-; dpi-y=200
+dpi-x=180
+dpi-y=180
 
 background = ${colors.background}
 foreground = ${colors.foreground}
