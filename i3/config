@@ -14,7 +14,7 @@ exec --no-startup-id nm-applet
 
 exec_always --no-startup-id "setxkbmap -layout ca -variant multi"
 exec_always --no-startup-id "xrandr --output DP-3 --primary --auto --left-of HDMI-1"
-exec_always --no-startup-id "feh --bg-fill -z $HOME/.wallpaper/*"
+exec_always --no-startup-id "feh --no-fehbg --bg-fill -z $HOME/.wallpaper/*"
 exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
 
 #########################################################################
