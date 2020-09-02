@@ -17,7 +17,7 @@
 
 - WM: [i3-gaps](https://github.com/Airblader/i3)
 - Fetch: [fet.sh](https://github.com/6gk/fet.sh)
-- Status: [polybar](https://github.com/polybar/polybar)
+- Status: [Polybar](https://github.com/polybar/polybar)
 - Launcher: [Rofi](https://github.com/davatorium/rofi)
 - Dotfiles Manager: [Dotbot](https://github.com/anishathalye/dotbot)
 
