@@ -14,11 +14,13 @@
     ~/.config/i3: i3
     ~/.config/polybar: polybar
     ~/.config/rofi: rofi
-    ~/.config/Code - Insiders/User/settings.json: code/User/settings.json
+    ~/.config/Code - OSS/User/settings.json: code/User/settings.json
 
 - create:
-  - ~/projects
-  - ~/downloads
+  - ~/documents
+  - ~/images
+  - ~/projets
+  - ~/téléchargements
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
