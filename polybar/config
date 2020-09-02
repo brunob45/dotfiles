@@ -52,7 +52,7 @@ fixed-center = true
 radius = 8.0
 
 width = 99%
-height = 2%
+height = 3%
 
 offset-x = .5%
 offset-y = .5%
@@ -75,14 +75,13 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = .1
 
-font-0 = fixed:pixelsize=10;1
-font-1 = "Material Icons:style=Regular:size=10;3"
-font-2 = "Material Design Icons:style=Regular:size=10;3"
+font-0 = "DejaVu Sans:style=Book:size=12;2"
+font-1 = "Material Design Icons:style=Regular:size=14;4"
 
 modules-left = i3
 modules-center = date
 ; modules-right = xbacklight alsa pulseaudio wlan battery date powermenu
-modules-right = alsa xbacklight forecast wlan battery powermenu
+; modules-right = pkgupdates alsa xbacklight forecast wlan battery powermenu
 
 tray-position = right
 tray-padding = 2
@@ -102,6 +101,17 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 locale = fr_CA.UTF-8
+
+
+[bar/primary]
+inherit = bar/mybar
+modules-right = pkgupdates alsa xbacklight forecast wlan battery powermenu
+
+
+[bar/secondary]
+inherit = bar/mybar
+modules-right = monitor
+
 
 [module/xwindow]
 type = internal/xwindow
@@ -154,12 +164,12 @@ label = 󰃞
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = ${colors.foreground}
-bar-indicator-font = 2
+; bar-indicator-font = 2
 bar-fill = ─
-bar-fill-font = 2
+; bar-fill-font = 2
 bar-fill-foreground = ${colors.purple}
 bar-empty = ─
-bar-empty-font = 2
+; bar-empty-font = 2
 bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
@@ -225,11 +235,11 @@ bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
+; bar-volume-indicator-font = 2
 bar-volume-fill = ─
-bar-volume-fill-font = 2
+; bar-volume-fill-font = 2
 bar-volume-empty = ─
-bar-volume-empty-font = 2
+; bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 ramp-volume-0 = 󰕿
@@ -313,7 +323,7 @@ menu-2-0-exec = systemctl poweroff
 
 [module/pkgupdates]
 type = custom/script
-exec = checkupdates
+exec = $HOME/.scripts/pkgupdate.sh
 interval = 600
 
 [module/forecast]

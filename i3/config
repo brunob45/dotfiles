@@ -46,7 +46,7 @@ set $black	#000000
 set $darkred	#300000
 
 smart_borders on
-set $inner_gaps 10
+set $inner_gaps 12
 set $outer_gaps -2
 set $top_gaps 32
 

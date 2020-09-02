@@ -1,9 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="/home/bruno/.oh-my-zsh"
-export EDITOR=/usr/bin/nano
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -86,6 +86,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR=/usr/bin/nano
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -96,8 +97,5 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="chezmoi edit ~/.zshrc && chezmoi apply"
-
-# neofetch --config /home/bruno/.neofetch.config
 # info='n user os sh wm up gtk cpu mem host kern pkgs term col n' fet.sh
-info='n os sh wm up kern pkgs term col n' fet.sh
+info='n os sh wm up kern pkgs term col n' $HOME/.scripts/fet.sh
