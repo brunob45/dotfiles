@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-#icon="$HOME/Images/miata_cat.png"
-icon="$HOME/Images/bg_black_small.png"
+icon="$HOME/images/bg_black_small.png"
 tmpbg='/tmp/screen.png'
 
 (( $# )) && { icon=$1; }
 
 scrot "$tmpbg"
-convert "$tmpbg" -scale 10% "$tmpbg"
-convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
-convert "$tmpbg" -sample 1000% "$tmpbg"
-
+convert "$tmpbg" \
+  -scale 10% \
+  "$icon" -gravity center -composite \
+  -sample 1000% \
+  "$tmpbg"
 
 i3lock -n -i "$tmpbg" --line-uses-inside \
   --indpos="x+1550:y+150" --radius=100 \
