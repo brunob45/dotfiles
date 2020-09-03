@@ -2,8 +2,8 @@
 
 xterm*locale: true
 
-xterm*faceName: DejaVu Sans Mono:size=10
-xterm*font: DejaVu Sans Mono
+xterm*faceName: Fira Code:size=10
+xterm*font: Fira Code
 
 xterm*transparent: true
 xterm.shading: 20
