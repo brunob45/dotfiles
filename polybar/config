@@ -82,8 +82,6 @@ font-3 = "Fira Code:style=Regular:size=12;4"
 
 modules-left = i3
 modules-center = date
-; modules-right = xbacklight alsa pulseaudio wlan battery date powermenu
-; modules-right = pkgupdates alsa xbacklight forecast wlan battery powermenu
 
 tray-position = right
 tray-padding = 2
@@ -92,12 +90,6 @@ tray-padding = 2
 wm-restack = i3
 
 ;override-redirect = true
-
-;scroll-up = bspwm-desknext
-;scroll-down = bspwm-deskprev
-
-;scroll-up = i3wm-wsnext
-;scroll-down = i3wm-wsprev
 
 cursor-click = pointer
 cursor-scroll = ns-resize
@@ -171,8 +163,8 @@ bar-indicator-foreground = ${colors.foreground}
 bar-fill = ─
 bar-fill-font = 4
 bar-fill-foreground = ${colors.purple}
-bar-empty = ─
-bar-empty-font = 4
+bar-empty = ·
+; bar-empty-font = 4
 bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
@@ -186,16 +178,14 @@ interface = wlp0s20f0u12
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-;format-connected = <ramp-signal>
-format-connected-underline = ${colors.purple}
+format-connected-underline = ${colors.yellow}
 ;label-connected = %essid%
 label-connected = %signal%%
 
-format-disconnected = 󰞃
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = 󰞃
+label-disconnected-foreground = ${colors.red}
 
 ramp-signal-0 = 󰢿
 ramp-signal-1 = 󰢼
@@ -214,7 +204,7 @@ time = %H:%M
 format-prefix-foreground = ${colors.foreground}
 ; format-underline = ${colors.blue}
 
-label = %date% | %time%
+label = %date% · %time%
 
 [module/alsa]
 type = internal/alsa
@@ -241,8 +231,8 @@ bar-volume-indicator = |
 ; bar-volume-indicator-font = 4
 bar-volume-fill = ─
 bar-volume-fill-font = 4
-bar-volume-empty = ─
-bar-volume-empty-font = 4
+bar-volume-empty = ·
+; bar-volume-empty-font = 4
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 ramp-volume-0 = 󰕿
@@ -255,16 +245,19 @@ battery = BAT1
 adapter = ADP1
 full-at = 98
 
+accent-color = ${colors.purple}
+
 ; format-charging-prefix = 󱐋
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.yellow}
+format-charging = <animation-charging><label-charging>
+format-charging-underline = ${self.accent-color}
 
-format-discharging = <ramp-capacity> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = <ramp-capacity><label-discharging>
+format-discharging-underline = ${self.accent-color}
 
-format-full = 󱈑 100%
-format-full-prefix-foreground = ${colors.foreground}
-format-full-underline = ${self.format-charging-underline}
+format-full-prefix = 󱈑
+format-full = <label-full>
+format-full-prefix-foreground = ${self.accent-color}
+format-full-underline = ${self.accent-color}
 
 ramp-capacity-0 = 󰂎
 ramp-capacity-0-foreground = ${colors.red}
@@ -301,13 +294,13 @@ type = custom/menu
 
 expand-right = false
 
-format-spacing = 1
+format-spacing = 0
 
 label-open = 󰐦
 label-open-foreground = ${colors.base0}
 label-close = 󰅚
 label-close-foreground = ${colors.base01}
-label-separator = |
+label-separator = ·
 label-separator-foreground = ${colors.base01}
 
 menu-0-0 = 󰑐
@@ -319,10 +312,10 @@ menu-0-2-exec = systemctl suspend
 menu-0-3 = 󰍁
 menu-0-3-exec = pkill -n polybar ; i3-msg exit
 
-menu-1-0 = "Reboot "
+menu-1-0 = "Reboot"
 menu-1-0-exec = systemctl reboot
 
-menu-2-0 = "Power off "
+menu-2-0 = "Power off"
 menu-2-0-exec = systemctl poweroff
 
 [module/pkgupdates]
