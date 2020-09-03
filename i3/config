@@ -9,9 +9,6 @@
 ## Autostart Applications
 #########################################################################
 
-exec --no-startup-id xss-lock --transfer-sleep-lock --i3lock --nofork
-exec --no-startup-id nm-applet
-
 exec_always --no-startup-id "setxkbmap -layout ca -variant multi"
 exec_always --no-startup-id "xrandr --output DP-3 --primary --auto --left-of HDMI-1"
 exec_always --no-startup-id "feh --no-fehbg --bg-fill -z $HOME/.wallpaper/*"
@@ -23,6 +20,8 @@ exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
 
 set $mod Mod4
 set $alt Mod1
+
+set $term kitty
 
 set $base03	#002b36
 set $base02	#073642
@@ -95,7 +94,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 5  && $refresh_i3status # incre
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 && $refresh_i3status # decrease screen brightness
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec $term
 
 # kill focused window
 bindsym $mod+Shift+q kill
