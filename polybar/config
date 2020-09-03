@@ -167,7 +167,7 @@ label = 󰃞
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = ${colors.foreground}
-bar-indicator-font = 4
+; bar-indicator-font = 4
 bar-fill = ─
 bar-fill-font = 4
 bar-fill-foreground = ${colors.purple}
@@ -238,7 +238,7 @@ bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 4
+; bar-volume-indicator-font = 4
 bar-volume-fill = ─
 bar-volume-fill-font = 4
 bar-volume-empty = ─
@@ -256,41 +256,42 @@ adapter = ADP1
 full-at = 98
 
 ; format-charging-prefix = 󱐋
-format-charging = <animation-charging><label-charging>
+format-charging = <animation-charging> <label-charging>
 format-charging-underline = ${colors.yellow}
 
-format-discharging = <ramp-capacity><label-discharging>
+format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = 󱈑
+format-full = 󱈑 100%
 format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
 
 ramp-capacity-0 = 󰂎
 ramp-capacity-0-foreground = ${colors.red}
-ramp-capacity-1 = 󰂎
+ramp-capacity-1 = 󰁺
 ramp-capacity-1-foreground = ${colors.yellow}
-ramp-capacity-2 = 󱊡
-ramp-capacity-3 = 󱊡
-ramp-capacity-4 = 󱊡
-ramp-capacity-5 = 󱊢
-ramp-capacity-6 = 󱊢
-ramp-capacity-7 = 󱊢
-ramp-capacity-8 = 󱊣
-ramp-capacity-9 = 󱊣
+ramp-capacity-2 = 󰁻
+ramp-capacity-3 = 󰁼
+ramp-capacity-4 = 󰁽
+ramp-capacity-5 = 󰁾
+ramp-capacity-6 = 󰁿
+ramp-capacity-7 = 󰂀
+ramp-capacity-8 = 󰂁
+; ramp-capacity-9 = 󰂂
+ramp-capacity-9 = 󰁹
 
 ramp-capacity-foreground = ${colors.foreground}
 
-animation-charging-0 = 󱊤
-animation-charging-1 = 󱊥
-animation-charging-2 = 󱊦
+animation-charging-0 = 󰂆
+animation-charging-1 = 󰢝
+animation-charging-2 = 󰂊
 ; animation-charging-3 = 󰢟
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
 
-animation-discharging-0 = 󱊣
-animation-discharging-1 = 󱊢
-animation-discharging-2 = 󱊡
+animation-discharging-0 = 󰂁
+animation-discharging-1 = 󰁿
+animation-discharging-2 = 󰁼
 ; animation-discharging-3 = 󰂎
 animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 750
@@ -331,7 +332,7 @@ interval = 600
 
 [module/forecast]
 type = custom/script
-exec = curl fr.wttr.in/?format="%c+%t\n" 2>/dev/null | sed "s/\+//"
+exec = curl fr.wttr.in/?format="%c%t\n" 2>/dev/null | sed "s/\+//"
 label = %output%
 format = <label>
 interval = 600
