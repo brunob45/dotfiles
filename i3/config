@@ -227,6 +227,7 @@ bindsym $alt+Sys_Req exec "gnome-screenshot -w"
 
 
 bindsym $mod+semicolon exec chromium
+bindsym $mod+Shift+semicolon exec chromium --incognito
 
 bindsym $mod+z exec killall -9 feh || feh -zZ. -g 400x400 $HOME/Dropbox/Images/Dessins/* --class fehfloating
 
