@@ -77,8 +77,8 @@ module-margin-right = .1
 
 font-0 = "IBM Plex Mono:style=Regular:size=12;2"
 font-1 = "Material Design Icons:style=Regular:size=14;4"
-font-2 = "Noto Sans Symbols2:style=Regular:size=14;3"
-font-3 = "Fira Code:style=Regular:size=12;4"
+font-2 = "Fira Code:style=Regular:size=12;4"
+font-3 = "Noto Sans Weather:style=Regular:size=14;3"
 
 modules-left = i3
 modules-center = date
@@ -159,12 +159,12 @@ label = 󰃞
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = ${colors.foreground}
-; bar-indicator-font = 4
+; bar-indicator-font = 3
 bar-fill = ─
-bar-fill-font = 4
+bar-fill-font = 3
 bar-fill-foreground = ${colors.purple}
 bar-empty = ·
-; bar-empty-font = 4
+; bar-empty-font = 3
 bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
@@ -228,11 +228,11 @@ bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
-; bar-volume-indicator-font = 4
+; bar-volume-indicator-font = 3
 bar-volume-fill = ─
-bar-volume-fill-font = 4
+bar-volume-fill-font = 3
 bar-volume-empty = ·
-; bar-volume-empty-font = 4
+; bar-volume-empty-font = 3
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 ramp-volume-0 = 󰕿
@@ -326,11 +326,13 @@ click-left = kill -USR1 %pid%
 
 [module/forecast]
 type = custom/script
+; Weather emojis : "✨☁️🌫🌧🌧❄️❄️🌦🌦🌧🌧🌨🌨⛅️☀️🌩⛈⛈☁️🌑🌒🌓🌔🌕🌖🌗🌘"
 exec = curl fr.wttr.in/?format="%c%t\n" 2>/dev/null | sed "s/\+//"
 label = %output%
 format = <label>
 interval = 600
 format-underline = ${colors.blue}
+format-font = 4
 
 [settings]
 screenchange-reload = true
