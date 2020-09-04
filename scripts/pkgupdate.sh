@@ -27,12 +27,14 @@ check() {
 
 update() {
   pkill -P $$ -x sleep
-  echo "󰑐"
 
   if [ $available = 1 ]; then
+    echo "󰑐"
     sudo pacman -Syu --noconfirm 2>&1 >/dev/null
 
-    if [ "$?" ]; then
+    if [ "$?" = 0 ]; then
+      # OK
+    else
       # Error
       echo "󱈸$message"
       sleep 5
