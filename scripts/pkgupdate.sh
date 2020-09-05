@@ -8,12 +8,12 @@ check() {
   pkgs=$(checkupdates 2>/dev/null)
   code=$?
 
-  if [ "$code" = 0 ]; then
+  if [ "$code" -eq 0 ]; then
     # Updates available
     message="󰏖$(echo "$pkgs" | wc -l)"
     available=1
 
-  elif [ "$code" = 2 ]; then
+  elif [ "$code" -eq 2 ]; then
     # No update available
     message="󰏗"
     available=0
@@ -27,12 +27,12 @@ check() {
 
 update() {
   pkill -P $$ -x sleep
-  echo "󰑐"
 
   if [ $available = 1 ]; then
+    echo "󰑐"
     sudo pacman -Syu --noconfirm 2>&1 >/dev/null
 
-    if [ "$?" ]; then
+    if [ "$?" -ne 0 ]; then
       # Error
       echo "󱈸$message"
       sleep 5
