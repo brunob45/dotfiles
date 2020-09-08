@@ -28,16 +28,16 @@ check() {
 update() {
   pkill -P $$ -x sleep
 
-  if [ $available = 1 ]; then
-    echo "󰑐"
-    sudo pacman -Syu --noconfirm 2>&1 >/dev/null
+  # if [ $available = 1 ]; then
+  #   echo "󰑐"
+  #   sudo pacman -Syu --noconfirm 2>&1 >/dev/null
 
-    if [ "$?" -ne 0 ]; then
-      # Error
-      echo "󱈸$message"
-      sleep 5
-    fi
-  fi
+  #   if [ "$?" -ne 0 ]; then
+  #     # Error
+  #     echo "󱈸$message"
+  #     sleep 5
+  #   fi
+  # fi
 }
 
 trap "update" USR1
