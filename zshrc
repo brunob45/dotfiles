@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -97,5 +96,7 @@ export EDITOR=/usr/bin/nano
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
+alias untargz='tar -xzvf'
+
 # info='n user os sh wm up gtk cpu mem host kern pkgs term col n' fet.sh
 info='n os sh wm kern pkgs term col n' $HOME/.scripts/fet.sh
