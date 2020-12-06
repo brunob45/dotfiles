@@ -10,9 +10,11 @@
 #########################################################################
 
 exec_always --no-startup-id "setxkbmap -layout ca -variant multi"
-exec_always --no-startup-id "xrandr --output DP-3 --primary --auto --left-of HDMI-1"
+exec_always --no-startup-id "xrandr --output DP-2 --primary --auto --left-of HDMI-1"
 exec_always --no-startup-id "feh --no-fehbg --bg-fill -z $HOME/.wallpaper/*"
 exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
+exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
 #########################################################################
 ## System Basics
@@ -226,7 +228,7 @@ bindsym Print exec "gnome-screenshot"
 bindsym $alt+Sys_Req exec "gnome-screenshot -w"
 
 
-bindsym $mod+semicolon exec chromium
+bindsym $mod+semicolon exec chromium --password-store=gnome
 bindsym $mod+Shift+semicolon exec chromium --incognito
 
 bindsym $mod+z exec killall -9 feh || feh -zZ. -g 400x400 $HOME/Dropbox/Images/Dessins/* --class fehfloating
