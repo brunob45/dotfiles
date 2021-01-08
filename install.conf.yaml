@@ -15,6 +15,9 @@
     ~/.config/rofi: rofi
     ~/.config/kitty: kitty
     ~/.config/Code - OSS/User/settings.json: code/User/settings.json
+    ~/.config/Code - Insiders/User/settings.json: code/User/settings.json
+    ~/.config/dunst: dunst
+    ~/.config/Thunar: Thunar
 
 - create:
   - ~/documents

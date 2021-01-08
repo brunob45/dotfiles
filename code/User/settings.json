@@ -25,5 +25,10 @@
     "platformio-ide.useBuiltinPIOCore": false,
     "C_Cpp.updateChannel": "Insiders",
     "workbench.startupEditor": "newUntitledFile",
-    "editor.fontFamily": "'Fira Code', 'Material Icons', 'Material Design Icons'"
+    "editor.fontFamily": "'Fira Code', 'Material Icons', 'Material Design Icons'",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "csv-preview.lineNumbers": "ordinal",
+    "csv-preview.separator": ";",
+    "csv-preview.capitalizeHeaders": false,
+    "csv-preview.formatValues": "never"
 }
