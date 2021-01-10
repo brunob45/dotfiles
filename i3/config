@@ -13,6 +13,7 @@ exec_always --no-startup-id "setxkbmap -layout ca -variant multi"
 exec_always --no-startup-id "xrandr --output DP-2 --primary --auto --left-of HDMI-1"
 exec_always --no-startup-id "feh --no-fehbg --bg-fill -z $HOME/.wallpaper/*"
 exec_always --no-startup-id $HOME/.scripts/launch_polybar.sh
+exec_always --no-startup-id "light-locker"
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1 &
 exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
 
@@ -219,7 +220,7 @@ bindsym $mod+r mode "resize"
 
 
 # Lock key binding
-bindsym $mod+l exec "~/.scripts/i3lock.sh"
+bindsym $mod+l exec "dm-tool switch-to-greeter"
 
 
 # Screenshot key bindings
