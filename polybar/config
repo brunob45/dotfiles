@@ -309,8 +309,10 @@ menu-0-1 = 󰐥
 menu-0-1-exec = menu-open-2
 menu-0-2 = 󰤄
 menu-0-2-exec = systemctl suspend
-menu-0-3 = 󰍁
+menu-0-3 = 󰍂
 menu-0-3-exec = pkill -n polybar ; i3-msg exit
+; menu-0-4 = 󰍁
+; menu-0-4-exec = dm-tool switch-to-greeter
 
 menu-1-0 = "Reboot"
 menu-1-0-exec = systemctl reboot
