@@ -64,6 +64,9 @@ output * bg ~/.wallpaper/2020-Pandem-R32-Skyline-Speedhunters-by-Paddy-McGrath-2
 #
 # Basics:
 #
+    bindsym $mod+semicolon exec chromium
+    bindsym $mod+c exec code-insiders
+
     # Start a terminal
     bindsym $mod+Return exec $term
 
