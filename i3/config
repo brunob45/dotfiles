@@ -221,6 +221,8 @@ bindsym $mod+r mode "resize"
 # Lock key binding
 bindsym $mod+l exec "~/.scripts/i3lock.sh"
 
+bindsym $mod+c exec "code-insiders"
+
 
 # Screenshot key bindings
 bindsym Print exec "gnome-screenshot"
