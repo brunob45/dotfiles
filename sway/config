@@ -58,7 +58,6 @@ output * bg ~/.wallpaper/2020-Pandem-R32-Skyline-Speedhunters-by-Paddy-McGrath-2
 default_border pixel 2
 gaps inner 12
 gaps outer -2
-gaps top 32
 
 font pango:Fira Code 12
 
