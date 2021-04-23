@@ -19,4 +19,39 @@
 	<patterns>*</patterns>
 	<directories/>
 </action>
+<action>
+	<icon>visual-studio-code-insiders</icon>
+	<name>Ouvrir avec Code</name>
+	<unique-id>1612154285931172-1</unique-id>
+	<command>code-insiders %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
+<action>
+	<icon>gimp</icon>
+	<name>Ouvrir avec Gimp</name>
+	<unique-id>1612154337361417-2</unique-id>
+	<command>/usr/bin/gimp %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<image-files/>
+</action>
+<action>
+	<icon></icon>
+	<name>7z - Extraire ici</name>
+	<unique-id>1613098176204186-1</unique-id>
+	<command>7z x -y %f</command>
+	<description></description>
+	<patterns>*</patterns>
+	<audio-files/>
+	<image-files/>
+	<other-files/>
+	<text-files/>
+	<video-files/>
+</action>
 </actions>

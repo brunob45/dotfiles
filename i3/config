@@ -224,9 +224,9 @@ bindsym $mod+l exec "dm-tool switch-to-greeter"
 
 
 # Screenshot key bindings
-bindsym Print exec "gnome-screenshot"
+bindsym Print exec "gnome-screenshot -f $HOME/images/Screenshot-$(date +%Y-%m-%d-%H:%M:%S).png"
 #Print key is actually Sys_Req when when Alt is pressed
-bindsym $alt+Sys_Req exec "gnome-screenshot -w"
+bindsym $alt+Sys_Req exec "gnome-screenshot -w -f $HOME/images/Screenshot-$(date +%Y-%m-%d-%H:%M:%S).png"
 
 
 bindsym $mod+semicolon exec chromium --password-store=gnome
