@@ -229,8 +229,8 @@ bindsym Print exec "gnome-screenshot -f $HOME/images/Screenshot-$(date +%Y-%m-%d
 bindsym $alt+Sys_Req exec "gnome-screenshot -w -f $HOME/images/Screenshot-$(date +%Y-%m-%d-%H:%M:%S).png"
 
 
-bindsym $mod+semicolon exec chromium --password-store=gnome
-bindsym $mod+Shift+semicolon exec chromium --incognito
+bindsym $mod+semicolon exec google-chrome-stable --password-store=gnome
+bindsym $mod+Shift+semicolon exec google-chrome-stable --incognito
 
 bindsym $mod+p move workspace to output right
 
